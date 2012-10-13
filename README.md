@@ -1,29 +1,18 @@
-# Aether
+Aether
+======
 
-TODO: Write a gem description
+Aether is a simple wrapper over the [Ridley Rubygem](http://rubygems.org/gems/ridley) that returns
+server information from a Hosted Chef Server.
 
-## Installation
+The `Ather::Chef` class is mainly used in Capistrano recipes.
 
-Add this line to your application's Gemfile:
 
-    gem 'aether'
+Sample Usage
+------------
 
-And then execute:
+    chef_server = Ather::Chef.new(:server_url => 'https://api.opscode.com/organizations/foo', :client_name => 'foo',
+                    :client_key => '/path/to/.chef/foo.pem', :organization => 'foo', :environment => 'production')
 
-    $ bundle
+    webservers = chef_server.find_webservers # returns an array of Ridley::Node
 
-Or install it yourself as:
-
-    $ gem install aether
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+    any_servers = chef_server.find_servers(:role => 'a-chef-role') # returns an array of Ridley::Node

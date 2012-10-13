@@ -1,4 +1,4 @@
-Copyright (c) 2012 Prashant Nadarajan
+Copyright (c) 2012 Bitium, Inc
 
 MIT License
 
