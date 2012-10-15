@@ -14,5 +14,4 @@ Sample Usage
                     :client_key => '/path/to/.chef/foo.pem', :organization => 'foo', :environment => 'production')
 
     webservers = chef_server.find_webservers # returns an array of Ridley::Node
-
     any_servers = chef_server.find_servers(:role => 'a-chef-role') # returns an array of Ridley::Node

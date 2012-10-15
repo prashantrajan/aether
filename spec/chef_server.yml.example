@@ -1,0 +1,5 @@
+server_url: 'https://api.opscode.com/organizations/xxx'
+client_name: 'xxx_client'
+client_key: '/absolute/path/to/.chef/xxx_client.pem'
+organization: 'xxx'
+environment: 'test'
