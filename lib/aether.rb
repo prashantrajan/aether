@@ -1,5 +1,5 @@
 require 'ridley'
 
 require 'aether/version'
-require 'aether/server'
+require 'aether/node'
 require 'aether/chef'

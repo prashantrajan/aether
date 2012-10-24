@@ -22,8 +22,8 @@ def chef_server_info
  @chef_server_info ||=  YAML.load_file(File.expand_path(File.join(File.dirname(__FILE__), 'chef_server.yml'))).symbolize_keys
 end
 
-def mock_node_results
-  @mock_node_results ||= Hashie::Mash.new(
+def mock_node
+  @mock_node ||= Hashie::Mash.new(
     :name => 'web01.staging.foo.com',
     :attributes => {
       :automatic => {
