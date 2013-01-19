@@ -4,13 +4,13 @@ Aether
 Aether is a simple wrapper over the [Ridley Rubygem](http://rubygems.org/gems/ridley) that returns
 server information from a Hosted Chef Server.
 
-The `Ather::Chef` class is mainly used in Capistrano recipes.
+The `Aether::Chef` class is mainly used in Capistrano recipes.
 
 
 Usage
 -----
 
-    chef_server = Ather::Chef.new(:server_url => 'https://api.opscode.com/organizations/foo', :client_name => 'foo',
+    chef_server = Aether::Chef.new(:server_url => 'https://api.opscode.com/organizations/foo', :client_name => 'foo',
                     :client_key => '/path/to/.chef/foo.pem', :organization => 'foo', :environment => 'production')
 
     # search servers with a given roles in its top level run list
