@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('rspec', '~> 2.11')
   gem.add_development_dependency('hashie', '~> 1.2')
 
-  gem.add_dependency('ridley', '~> 0.3')
+  gem.add_dependency('ridley', '= 0.6.3')
 
   gem.name          = "aether"
   gem.version       = Aether::VERSION
