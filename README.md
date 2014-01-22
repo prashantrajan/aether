@@ -13,8 +13,8 @@ This is a thin wrapper over the Ridley interface that adds some Node level conve
 
 ## Usage
 
-    chef_server = Aether::Chef.new(:server_url => 'https://api.opscode.com/organizations/foo', :client_name => 'foo',
-                    :client_key => '/path/to/.chef/foo.pem', :organization => 'foo', :environment => 'production')
+    chef_server = Aether::Chef.new(server_url: 'https://api.opscode.com/organizations/foo', client_name: 'foo',
+                                    client_key: '/path/to/.chef/foo.pem', environment: 'production')
 
     # search servers with a given roles in its top level run list
     servers = chef_server.find_nodes(:roles => ['role2', 'role2']) # returns an array of Aether::Node
