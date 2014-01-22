@@ -1,6 +1,6 @@
 require 'ridley'
-# don't output Celluloid logs (see: https://github.com/RiotGames/ridley/issues/220)
-Ridley::Logging.logger.level = Logger::ERROR
+# don't output Celluloid messages (see: https://github.com/RiotGames/ridley/issues/220)
+Ridley::Logging.logger.level = Logger::FATAL
 
 require 'aether/version'
 require 'aether/node'
