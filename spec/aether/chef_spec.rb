@@ -7,7 +7,7 @@ describe Aether::Chef do
     let(:chef_server) { Aether::Chef.new(chef_server_info) }
 
     it "sets the connection" do
-      expect(chef_server.connection).to be_an_instance_of(Ridley::Connection)
+      expect(chef_server.connection).to be_an_instance_of(Ridley::Client)
     end
 
     it "sets the environment" do
@@ -50,11 +50,10 @@ describe Aether::Chef do
   describe "#find_nodes" do
     let(:chef_server) { Aether::Chef.new(chef_server_info) }
 
-    it "returns an array of Chef::Server" do
+    it "returns an array of Aether::Node" do
       results = chef_server.find_nodes(:roles => ['web-server'])
       expect(results).to be_an_instance_of(Array)
       expect(results.first).to be_an_instance_of(Aether::Node)
     end
   end
-
 end

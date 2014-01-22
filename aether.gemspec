@@ -4,12 +4,6 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'aether/version'
 
 Gem::Specification.new do |gem|
-  gem.add_development_dependency('rake', '>= 0.8')
-  gem.add_development_dependency('rspec', '~> 2.11')
-  gem.add_development_dependency('hashie', '~> 1.2')
-
-  gem.add_dependency('ridley', '= 0.6.3')
-
   gem.name          = "aether"
   gem.version       = Aether::VERSION
   gem.authors       = ["Bitium, Inc"]
@@ -22,4 +16,10 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_development_dependency('rake', '>= 0.8')
+  gem.add_development_dependency('rspec', '~> 2.14')
+  gem.add_development_dependency('hashie', '~> 2.0')
+
+  gem.add_dependency('ridley', '~> 2.4')
 end

@@ -3,15 +3,14 @@ module Aether
 
     attr_reader :connection, :environment
 
-    def initialize(options = {})
-      @connection = Ridley::Connection.new(
-        :server_url => options[:server_url],
-        :client_name => options[:client_name],
-        :client_key => options[:client_key],
-        :organization => options[:organization]
+    def initialize(opts = {})
+      @connection = Ridley.new(
+        server_url: opts[:server_url],
+        client_name: opts[:client_name],
+        client_key: opts[:client_key]
       )
 
-      @environment = options[:environment]
+      @environment = opts[:environment]
     end
 
     def find_nodes(options = {}, include_environment = true)
@@ -27,7 +26,8 @@ module Aether
     end
 
     def find_data_bag_item(bag_name, item_name)
-      connection.data_bag.all.find{ |bag| bag.name == bag_name }.item.find(item_name).attributes
+      data_bag_item = connection.data_bag.all.find{ |bag| bag.name == bag_name }.item.find(item_name)
+      Aether::DataBagItem.new(data_bag_item)
     end
 
     def build_search_query(options = {})

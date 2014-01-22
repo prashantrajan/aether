@@ -25,11 +25,18 @@ end
 def mock_node
   @mock_node ||= Hashie::Mash.new(
     :name => 'web01.staging.foo.com',
+    :public_hostname => 'web01.staging.foo.com',
+    :chef_attributes => {
+      :fqdn => 'web01.staging.foo.com',
+      :ipaddress => '10.0.10.15'
+    }
+  )
+end
+
+def mock_data_bag_item
+  @mock_data_bag_item ||= Hashie::Mash.new(
     :attributes => {
-      :automatic => {
-        :fqdn => 'web01.staging.foo.com',
-        :ipaddress => '10.0.10.15'
-      }
+      :primary_hostname => Hashie::Mash.new(:integration => 'integration.foo.com', :staging => 'staging.foo.com')
     }
   )
 end

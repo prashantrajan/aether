@@ -1,15 +1,14 @@
 # Aether
 
 Aether is a simple wrapper over the [Ridley Rubygem](http://rubygems.org/gems/ridley) that returns
-server information from a Hosted Chef Server.
+server information from a Chef Server.
 
 The `Aether::Chef` class is mainly used in Capistrano recipes.
 
 
 ## Disclaimer
 
-This was built when the Ridley interface was in flux and we needed a consistent way to access node attributes.
-Ridley has since added most of the same node related methods so you should probably use Ridley directly.
+This is a thin wrapper over the Ridley interface that adds some Node level convenience methods.
 
 
 ## Usage
