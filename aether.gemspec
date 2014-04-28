@@ -21,5 +21,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('rspec', '~> 2.14')
   gem.add_development_dependency('hashie', '~> 2.0')
 
-  gem.add_dependency('ridley', '~> 2.4.1')
+  gem.add_dependency('ridley', '~> 3.1.0')
 end
